@@ -1,24 +1,13 @@
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { Text, View } from 'react-native';
+import { useTheme } from '../themeContext';
 
 export default function Home() {
+  const { themeStyles } = useTheme();
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Home</Text>
+    <View style={themeStyles.container}>
+      <Text style={themeStyles.title}>Home</Text>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#303030',
-    alignItems: 'center',
-    justifyContent: 'center',
-    
-  },
-  title: {
-    fontSize: 22,
-    fontWeight: 'bold',
-    color: '#fff'
-  }
-});

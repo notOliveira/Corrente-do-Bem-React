@@ -1,22 +1,13 @@
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { Text, View } from 'react-native';
+import { useTheme } from '../themeContext';
 
 export default function About() {
+  const { themeStyles } = useTheme();
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>About</Text>
+    <View style={themeStyles.container}>
+      <Text style={themeStyles.title}>About</Text>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 22,
-    fontWeight: 'bold'
-  }
-});

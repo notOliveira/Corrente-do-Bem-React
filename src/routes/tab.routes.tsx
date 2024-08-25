@@ -27,8 +27,8 @@ export default function TabRoutes() {
         name="About" 
         component={About} 
         options={{
-            tabBarIcon: ({color, size}) => <Feather name="info" color={color} size={size} />,
-            tabBarLabel: 'Sobre'
+            tabBarIcon: ({color, size}) => <Feather name="layers" color={color} size={size} />,
+            tabBarLabel: 'Organizações'
         }} 
         />
       <Tab.Screen 
