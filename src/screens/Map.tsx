@@ -1,9 +1,9 @@
 import { StyleSheet, Text, View } from 'react-native';
 
-export default function Home() {
+export default function Map() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Home</Text>
+      <Text style={styles.title}>Map</Text>
     </View>
   );
 }
@@ -11,14 +11,12 @@ export default function Home() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#303030',
+    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-    
   },
   title: {
     fontSize: 22,
-    fontWeight: 'bold',
-    color: '#fff'
+    fontWeight: 'bold'
   }
 });
