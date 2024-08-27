@@ -31,14 +31,14 @@ export default function TabRoutes() {
             tabBarLabel: 'Organizações'
         }} 
         />
-      <Tab.Screen 
+      {/* <Tab.Screen 
         name="Login" 
         component={Login} 
         options={{
             tabBarIcon: ({color, size}) => <Feather name="log-in" color={color} size={size} />,
             tabBarLabel: 'Login'
         }}
-        />
+        /> */}
     </Tab.Navigator>
   );
 }
