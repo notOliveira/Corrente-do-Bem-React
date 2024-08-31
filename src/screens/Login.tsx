@@ -1,16 +1,24 @@
 import React, { useState } from 'react';
 import { Text, View, TextInput, Button } from 'react-native';
 import { useTheme } from '../themeContext';
-import { loginUser } from '../services/authService';
+import { loginUser } from '../api/api';
+import { useNavigation } from '@react-navigation/native';
 
 export default function Login() {
   const { themeStyles } = useTheme();
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
-  const [errorMessage, setErrorMessage] = useState<string>('');
+  const navigation = useNavigation();
 
   const handleLogin = async () => {
-    await loginUser(email, password);
+    try {
+      await loginUser(email, password);
+      console.log('Login successful');
+      navigation.navigate('Home');
+
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
