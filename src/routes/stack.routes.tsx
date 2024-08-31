@@ -7,7 +7,7 @@ export default function StackRoutes(){
     return (
         <Stack.Navigator screenOptions={{ title: ''}}>
             <Stack.Screen 
-                name="home"
+                name="login"
                 component={Login}
                 options={{
                     headerShown: false
