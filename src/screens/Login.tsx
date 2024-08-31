@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import { Text, View, TextInput, Button } from 'react-native';
 import { useTheme } from '../themeContext';
+import { loginUser } from '../services/authService';
 
 export default function Login() {
   const { themeStyles } = useTheme();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
+  const [errorMessage, setErrorMessage] = useState<string>('');
 
-  const handleLogin = () => {
-    // Lógica de login vai aqui
-    console.log('Email:', email);
-    console.log('Password:', password);
+  const handleLogin = async () => {
+    await loginUser(email, password);
   };
 
   return (
@@ -29,10 +29,11 @@ export default function Login() {
 
       <TextInput
         style={themeStyles.input}
-        placeholderTextColor={themeStyles.placeholderText.color}
         placeholder="Senha"
+        placeholderTextColor={themeStyles.placeholderText.color}
         value={password}
         onChangeText={setPassword}
+        autoCapitalize='none'
         secureTextEntry
       />
 
